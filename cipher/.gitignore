@@ -1,0 +1,4 @@
+*.o
+cipher
+*.enc
+*.dec
