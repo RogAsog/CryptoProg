@@ -1,9 +1,10 @@
 CXX = g++
-CXXFLAGS = -std=c++11 -O2 -I/usr/include/crypto++
-LDFLAGS = -lcryptopp
+CXXFLAGS = -std=c++11 -O2
+INCLUDES = -I/usr/include/crypto++
+LIBS = -lcryptopp -lboost_program_options
 
 hash: hash.cpp
-	$(CXX) $(CXXFLAGS) hash.cpp -o hash $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) hash.cpp -o hash $(LIBS)
 
 clean:
-	rm -f hash *.o
+	rm -f hash
